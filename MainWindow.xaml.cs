@@ -130,6 +130,7 @@ namespace Tracciamento_lavoro
                     updateTxbStart();
                     updateDuration();
                     updateTxbDuration();
+                    btnScan_Click(null, null);
                 }
             }
             return;

@@ -24,10 +24,10 @@
         </StackPanel>
         <DataGrid Name="dtgLog" Grid.Row="2" IsReadOnly="True" AutoGenerateColumns="False" Margin="0,5,0,0">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Code" Binding="{Binding Code}" />
-                <DataGridTextColumn Header="Start" Binding="{Binding Start}" />
-                <DataGridTextColumn Header="End" Binding="{Binding End}" />
-                <DataGridTextColumn Header="Elapsed" Binding="{Binding Elapsed}" />
+                <DataGridTextColumn Header="Codice" Binding="{Binding Code}" />
+                <DataGridTextColumn Header="Inizio" Binding="{Binding Start}" />
+                <DataGridTextColumn Header="Fine" Binding="{Binding End}" />
+                <DataGridTextColumn Header="Durata" Binding="{Binding Elapsed}" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
