@@ -5,8 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tracciamento_lavoro"
         mc:Ignorable="d"
-        Title="Tracciamento lavoro" Height="450" Width="800" Topmost="True" ResizeMode="NoResize">
-    <Grid>
-        
+        Title="Tracciamento lavoro" Height="450" Width="800" Topmost="True" ResizeMode="NoResize" Background="AliceBlue">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBox Name="textBoxCode" IsReadOnly="false" IsTabStop="False" Width="400" FontSize="28" Margin="0,0,5,0" Text="{Binding Code}"/>
+            <Button Name="btnScan" Content="Scan" Width="100" FontSize="28" Click="btnScan_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Label Name="lblStart" Content="Inizio test: " FontSize="24" Margin="0,0,5,0"/>
+            <TextBlock Name="txbStart" FontSize="24" Width="300" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <Label Name="lblDuration" Content="Durata test: " FontSize="24" Margin="0,0,5,0"/>
+            <TextBlock Name="txbDuration" FontSize="24" Width="200" VerticalAlignment="Center" Margin="0,0,5,0"/>
+        </StackPanel>
+        <DataGrid Name="dtgLog" Grid.Row="2" IsReadOnly="True" AutoGenerateColumns="False" Margin="0,5,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Code" Binding="{Binding Code}" />
+                <DataGridTextColumn Header="Start" Binding="{Binding Start}" />
+                <DataGridTextColumn Header="End" Binding="{Binding End}" />
+                <DataGridTextColumn Header="Elapsed" Binding="{Binding Elapsed}" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
